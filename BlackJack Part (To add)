@@ -1,0 +1,69 @@
+def calculate_hand_value(hand):
+    value = 0
+    aces = 0
+    for card in hand:
+        rank = card.split(" ")[0]
+        if rank in ['J', 'Q', 'K']:
+            value += 10
+        elif rank == 'A':
+            aces += 1
+            value += 11
+        else:
+            value += int(rank)
+
+    while value > 21 and aces:
+        value -= 10
+        aces -= 1
+    return value
+
+def play_blackjack(deck):
+    print("Welcome to Blackjack!")
+
+    while True:
+        if len(deck) < 10:
+            print("Not enough cards in the deck, Resetting ... ")
+            deck.extend(build_deck())
+            random.shuffle(deck)
+
+        player_hand = [draw_card(deck), draw_card(deck)]
+        dealer_hand = [draw_card(deck), draw_card(deck)]
+
+        print(f"Your hand: {', '.join(player_hand)} (value: {calculate_hand_value(player_hand)})")
+        print(f"Dealer's hand: {dealer_hand[0]} and [hidden]")
+
+        while True:
+            action = input("Do you want to [H]it or [S]tand? ").strip().lower()
+            if action == 'h':
+                player_hand.append(draw_card(deck))
+                print(f"Your hand: {', '.join(player_hand)} (value: {calculate_hand_value(player_hand)})")
+                if calculate_hand_value(player_hand) > 21:
+                    print("Bust! You lose.")
+                    break  # Cambiato da return a break
+            elif action == 's':
+                break
+            else:
+                print("Invalid input. Please enter 'H' or 'S'.")
+
+        # Dealer's turn:
+        if calculate_hand_value(player_hand) <= 21:  # Aggiunto controllo per evitare turno dealer in caso di "Bust"
+            print(f"Dealer's hand: {', '.join(dealer_hand)} (value: {calculate_hand_value(dealer_hand)})")
+            while calculate_hand_value(dealer_hand) < 17:
+                dealer_hand.append(draw_card(deck))
+                print(f"Dealer's hand: {', '.join(dealer_hand)} (value: {calculate_hand_value(dealer_hand)})")
+
+            # Determine Winner:
+            player_value = calculate_hand_value(player_hand)
+            dealer_value = calculate_hand_value(dealer_hand)
+            if dealer_value > 21 or player_value > dealer_value:
+                print("You win!")
+            elif player_value == dealer_value:
+                print("It's a tie!")
+            else:
+                print("You lose!")
+
+        # Prompt to continue or quit:
+        continue_playing = input("\nPress Enter to play again, or type 'quit' to exit: ").strip().lower()
+        if continue_playing == "quit":
+            print("Thanks for playing Blackjack!")
+            break
+
