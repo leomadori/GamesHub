@@ -1,131 +1,86 @@
-# -*- coding: utf-8 -*-
-#Coding project
-#to do: 
-    #Fix documentation
-    #come up with more games
-    #improve length
+import os
 import random
+import streamlit as st
 
+# Function to build and shuffle the deck
 def build_deck(include_jokers=False):
-    suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades']
+    suits = {'Hearts': 'H', 'Diamonds': 'D', 'Clubs': 'C', 'Spades': 'S'}
     values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
     deck = [f"{value} of {suit}" for suit in suits for value in values]
     if include_jokers:
-        deck.extend(['Joker', 'Joker']) #do we really need jokers?
+        deck.extend(['Joker', 'Joker'])
     random.shuffle(deck)
     return deck
 
-def draw_card(deck):
-    return deck.pop() if deck else None #
+# Card Image Path Helper
+def get_card_image_path(card):
+    """Convert full card name to the corresponding image path."""
+    suits_abbreviation = {'Hearts': 'H', 'Diamonds': 'D', 'Clubs': 'C', 'Spades': 'S'}
+    value, suit = card.split(" of ")
+    card_filename = value + suits_abbreviation[suit] + ".jpg"  # e.g., '3S.jpg'
+    return os.path.join("cards", card_filename)
 
-def reset_deck(include_jokers=False):
-    return build_deck(include_jokers) # do we need jokers? maybe recode
+# Initialize Streamlit Session State
+if 'deck' not in st.session_state:
+    st.session_state.deck = build_deck()
+if 'kings_drawn' not in st.session_state:
+    st.session_state.kings_drawn = 0
+if 'last_card' not in st.session_state:
+    st.session_state.last_card = None
 
-def play_kings_cup(deck): #dictionary, too long though
-    actions = {
-        '2': "Pick someone to drink!",
-        '3': "You drink!",
-        '4': "All GUYS drink!",
-        '5': "Play Five Ten",
-        '6': "All LADIES drink!",
-        '7': "Last person to stand up drinks!",
-        '8': "Pick someone to drink with you!",
-        '9': "Say a word, next person must rhyme. Loser drinks!",
-        '10': "Pick a category. Go around until someone can't answer. They drink!",
-        'J': "Everyone puts up 3 fingers. Go around with 'Never Have I Ever' statements. Whoever drops all fingers first drinks!",
-        'Q': "Until the next Queen is drawn, no one can talk to you. Anyone who does, drinks!",
-        'K': "King's Cup - Pour a bit of your drink into the King's Cup. The person who draws the 4th King drinks it!",
-        'A': "Set a new rule that lasts the entire game! Rules can stack >:)" ##add multiple queens
-    }
-    kings_drawn = 0
-    game_over = False
+# Actions for cards
+actions = {
+    '2': "Pick someone to drink!",
+    '3': "You drink!",
+    '4': "All GUYS drink!",
+    '5': "Play Five Ten!",
+    '6': "All LADIES drink!",
+    '7': "Last person to stand up drinks!",
+    '8': "Pick someone to drink with you!",
+    '9': "Say a word, next person must rhyme. Loser drinks!",
+    '10': "Pick a category. Go around until someone can't answer. They drink!",
+    'J': "Never Have I Ever - Everyone puts up 3 fingers. First to drop all fingers drinks!",
+    'Q': "Silent Queen - No one can talk to you until the next Queen. Rule-breakers drink!",
+    'K': "King's Cup! Pour a bit of your drink into the cup. The 4th King drinks it all!",
+    'A': "Set a new rule that lasts the game! Be creative!"
+}
 
-    while not game_over and deck:
-        input("Press Enter to draw a card...")
-        card = draw_card(deck)
-        if not card:
-            print("No more cards left. The game is over!")
-            break
+# Streamlit UI
+st.title("Card Game Web App")
+st.subheader("Draw a card and see what happens!")
 
+if st.button("Draw a Card"):
+    if st.session_state.deck:
+        card = st.session_state.deck.pop()
+        st.session_state.last_card = card
+        st.write(f"You drew: **{card}**")
+
+        # Display card action
         card_value = card.split()[0]
-        print(f"\nYou drew: {card}")
-
         if card_value == 'K':
-            kings_drawn += 1
-            print(f"{actions[card_value]} (Kings drawn so far: {kings_drawn})")
-            if kings_drawn == 4:
-                print("\nThe fourth King has been drawn! The game is over!")
-                game_over = True
+            st.session_state.kings_drawn += 1
+            st.write(f"King drawn! Kings so far: {st.session_state.kings_drawn}")
+            if st.session_state.kings_drawn == 4:
+                st.write("🎉 The 4th King has been drawn! Game over! 🎉")
         else:
-            print(actions.get(card_value, "No action for this card."))
+            st.write(actions.get(card_value, "No action for this card."))
 
-def play_higher_lower(deck):
-    current_card = draw_card(deck)
-    print("Starting card is:", current_card)
-
-    while deck:
-        guess = input("Will the next card be 'higher' or 'lower'? ").strip().lower()
-        if guess not in ['higher', 'lower']:
-            print("Invalid input. Please enter 'higher' or 'lower'.")
-            continue  
-        next_card = draw_card(deck)
-        print("Next card is:", next_card)
-
-        if (guess == 'higher' and next_card > current_card) or (guess == 'lower' and next_card < current_card):
-            print("You guessed correctly!")
+        # Display card image
+        card_image_path = get_card_image_path(card)
+        if os.path.exists(card_image_path):
+            st.image(card_image_path, caption=f"{card}", width=150)
         else:
-            print("Wrong guess! Take a shot! Game over.")
-            break     
-        current_card = next_card
+            st.write("Card image not found!")
+    else:
+        st.write("No more cards left! Reset the deck to play again.")
 
-def play_card_guess(deck):
-    print("Welcome to Card Guess! Try to guess the value or suit of the next card.")
-    score = 0
+if st.button("Reset Deck"):
+    st.session_state.deck = build_deck()
+    st.session_state.kings_drawn = 0
+    st.session_state.last_card = None
+    st.write("The deck has been reset. Let's play!")
 
-    while deck:
-        guess_type = input("Do you want to guess the 'value' or 'suit' of the card? ").strip().lower()
-        if guess_type not in ['value', 'suit']:
-            print("Invalid input. Please enter 'value' or 'suit'.")
-            continue
+# Display Remaining Cards
+st.write(f"Cards remaining: {len(st.session_state.deck)}")
 
-        card = draw_card(deck)
-        card_value, card_suit = card.split(" of ")
-        guess = input(f"Guess the card's {guess_type}: ").strip().capitalize()
 
-        if (guess_type == 'value' and guess == card_value) or (guess_type == 'suit' and guess == card_suit):
-            print(f"Correct! The card was {card}.")
-            score += 1
-        else:
-            print(f"Incorrect. The card was {card}.")
-            break
-
-    print(f"Game over! Your score: {score}")
-
-def choose_game():
-    deck = reset_deck(include_jokers=False)
-    game_options = {
-        "kings cup": play_kings_cup,
-        "higher lower": play_higher_lower,
-        "card guess": play_card_guess
-    }
-
-    while True:
-        choice = input("\nChoose a game (Kings Cup, Higher Lower, Card Guess): ").strip().lower()
-        if choice in game_options:
-            print(f"\nStarting {choice.title()}!")
-            game_options[choice](deck)
-            break
-        elif choice == "quit":
-            return ("No worries, have a good one!")
-        else:
-            print("Invalid choice. Please enter one of the provided game names.")
-
-# Run the game selector
-choose_game()
-
-#add two players via clases, use github to make the  UI nice (selfstudy) 
-#trivia.blackjack
-#commenting - (see any other github readme) - try to
-# come up with this (follow a template and look into it)
-#button to restart game or a menu button.
-#/sd. !!! - 14 november
