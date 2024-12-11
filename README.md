@@ -10,3 +10,10 @@ possible table of content
    2.4 etc.
 4. outloooks 
 xd
+
+#Program Description
+
+#Features
+##1. King's Cup
+##2. Blackjack
+##3. Trivia
