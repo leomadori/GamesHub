@@ -1,8 +1,8 @@
 # Xcoding
 
 possible table of content
-1. program description (what is it about, goals)
-2. features (describe how the works, don't explain the code here, do that on the actual code)
+# 1. program description (what is it about, goals)
+# 2. features (describe how the works, don't explain the code here, do that on the actual code)
 ## 2.1 kingscup
 
 ### Game Description 
@@ -41,10 +41,10 @@ Do note that we do not promote irresponsible drinking nor do we encourage the in
 ### Operational Guide
 To play the game, the user must first run the code in the terminal. Once done, they must select the tab that has the words "King's Cup" and click "Play" to begin the game. The game will automatically end when the tab is exited or when the 4th King has been drawn, and the user can choose to quit or play the game again.
    
-   2.2 blackjack
-   2.3 trivia
-   2.4 etc.
-4. outloooks 
+## 2.2 blackjack
+## 2.3 trivia
+## 2.4 etc.
+# 4. outloooks 
 xd
 
 
