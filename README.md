@@ -50,7 +50,7 @@ When any card with the value of K is drawn, the person who drew the card can pou
 When any card with the value of A is drawn, the person who drew the card can set a new rule that all players must adhere to until the next card with the value of A is drawn (e.g. All conversations must now be in Swiss-German). Anyone who breaks this rule must drink their beverage.  
   
     
-*Do note that we do not promote irresponsible drinking nor do we encourage the ingestion of alcoholic beverages. The game mainly revolves around the ingestion of a beverage, which can include non-alcoholic drinks, sauces/condiments (i.e. spicy Siracha sauces), and can even include non-liquids (and the person who draws the 4th King will have to eat what is in the cup.*
+*Do note that we do not promote irresponsible drinking nor do we encourage the ingestion of alcoholic beverages. The game mainly revolves around the ingestion of a beverage, which can include non-alcoholic drinks, sauces/condiments (i.e. spicy Siracha sauces), and can even include non-liquids (where the person who draws the 4th King will still have to eat what is in the cup.)*
 
 ### Operational Guide (tbc on the 17th/18th when we meet up)
 To play the game, the user must first run the code in the terminal. Once done, they must select the tab that has the words "King's Cup" and click "Play" to begin the game. The game will automatically end when the tab is exited or when the 4th King has been drawn, and the user can choose to quit or play the game again.
