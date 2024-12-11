@@ -8,6 +8,7 @@ possible table of content
 ### Game Description 
 Kingscup is a card-based game where players take turns to draw cards and follow prompts. Each unique value of a card has a prompt associated to it, and the prompts remain the same regardless of the suit of the card (i.e., there are 13 different prompts * 4 different card suits). As the name suggests, the game revolves around the cards with the "King" value, with the game ending when the 4th King has been drawn.
 
+### Card Values and Prompts 
 In this version of the game, the card's values have the following associated prompts.   
   
 **'2': "Pick someone to drink!"**  
@@ -35,7 +36,7 @@ When any card with the value of 8 is drawn, the person who draws it can pick ano
 When any card with the value of 9 is drawn, the player who draws it can choose a word. All players that follow must say words that rhyme with the chosen word, and this continues until one person fails to rhyme with the chosen word. The said person must drink their beverage.  
   
 **'10': "Pick a category. Go around until someone can't answer. They drink!"**  
-When any card with the value of 10 is drawn, the player who draws it can choose a word. All players that follow must say words that rhyme with the chosen word, and this continues until one person fails to rhyme with the chosen word. The said person must drink their beverage.  
+When any card with the value of 10 is drawn, the player who draws it can choose a category. All players that follow must name objects that fit into the category, and this continues until one person fails to do so. The said person must drink their beverage.  
   
 **'J': "Never Have I Ever - Everyone puts up 3 fingers. First to drop all fingers drinks!"**  
 When any card with the value of J is drawn, a mini-game of "Never Have I Ever" begins. "Never Have I Ever" requires all players to put up 3 fingers. For each turn in the game, players will say something that they have never done before (e.g. "Never have I ever travelled to Sweden"). Players who have done the said thing before (e.g. If they have travelled to Sweden / live in Sweden) will put a finger down. The first player(s) who put all their fingers down will have to drink their beverage.  
@@ -50,6 +51,7 @@ When any card with the value of K is drawn, the person who drew the card can pou
 When any card with the value of A is drawn, the person who drew the card can set a new rule that all players must adhere to until the next card with the value of A is drawn (e.g. All conversations must now be in Swiss-German). Anyone who breaks this rule must drink their beverage.  
   
     
+## Disclaimer
 *Do note that we do not promote irresponsible drinking nor do we encourage the ingestion of alcoholic beverages. The game mainly revolves around the ingestion of a beverage, which can include non-alcoholic drinks, sauces/condiments (i.e. spicy Siracha sauces), and can even include non-liquids (where the person who draws the 4th King will still have to eat what is in the cup.)*
 
 ### Operational Guide (tbc on the 17th/18th when we meet up)
