@@ -58,7 +58,60 @@ When any card with the value of A is drawn, the person who drew the card can set
 To play the game, the user must first run the code in the terminal. Once done, they must select the tab that has the words "King's Cup" and click "Play" to begin the game. The game will automatically end when the tab is exited or when the 4th King has been drawn, and the user can choose to quit or play the game again.
    
 ## 2.2 blackjack
-## 2.3 trivia
+## 2.3 Trivia Quiz Game
+
+### Game Description
+This Game is an interactive general knowledge quiz where players answer ten questions in their chosen difficulty level. Each question offers four different answers to choose from. Each correct answer will count towards your final score with a highscore of 10. Let's see if you can reach it!
+
+### Game Flow
+1. **Choose a Difficulty:**
+   - Players begin by selecting a difficulty level: Easy, Medium, or Hard.
+
+2. **Answer Questions:**
+   - Players answer ten randomized trivia questions, with shuffled answer options to ensure fairness.
+
+3. **Score Evaluation:**
+   - At the end of the game, players are scored based on the number of correct answers, and a performance message is provided.
+
+4. **Replay Option:**
+   - Players can choose to restart the quiz or exit after each game.
+
+### Features
+1. **Dynamic Questions**
+   - Trivia questions are fetched from the Open Trivia Database (OpenTDB) API, ensuring variety with every new game.
+
+2. **Error Handling**
+   - Built-in validation for user input ensures smooth gameplay, even if invalid choices are entered.
+
+3. **Shuffled Answer Options**
+   - Answer options are randomized for each question to avoid any predictable patterns.
+
+4. **Performance Feedback**
+   - Players receive customized feedback based on their quiz results:
+     - 10/10: “WOW HIGHSCORE! Congratulations!”
+     - 8–9: “Great Job, you did really good!”
+     - 4–7: “You're on a good path to become a Pro!”
+     - 0–3: “Well... let's just say you might want to rethink your career as a trivia master.”
+
+5. **Replayability**
+   - Players can replay the game endlessly, with new questions fetched each time.
+
+### How to Play
+1. **Run the Script:**
+   - Execute the Python script in your terminal or IDE
+
+2. **Select Difficulty:**
+   - Choose from Easy, Medium, or Hard difficulty levels.
+
+3. **Answer Questions:**
+   - Answer each question by typing the number corresponding to your selected choice.
+
+4. **View Results:**
+   - Your score will be displayed after all questions are answered.
+
+5. **Replay or Exit:**
+   - Choose whether to play again or exit the game.
+
 ## 2.4 etc.
 # 4. outloooks 
 xd
