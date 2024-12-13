@@ -10,20 +10,23 @@ def build_deck(): #A function that builds a classic deck of 52 cards
     random.shuffle(deck) #randomises the deck
     return deck #returns a shuffled deck of 52 cards (or 54 if include_jokers=True)
 
-# Card Image Path Helper
+# Card Image Path Helper, this function 
 def get_card_image_path(card):
     """Convert full card name to the corresponding image path."""
-    suits_abbreviation = {'Hearts': 'H', 'Diamonds': 'D', 'Clubs': 'C', 'Spades': 'S'} #Dictionary that calls the suit of the card's image
+    suits_abbreviation = {'Hearts': 'H', 
+                          'Diamonds': 'D',
+                          'Clubs': 'C',
+                          'Spades': 'S'} #Dictionary that calls the suit of the card's image to match naming of .jpg cards in the "cards"folder
     value, suit = card.split(" of ") #e.g. 3 of Spades
     card_filename = value + suits_abbreviation[suit] + ".jpg"  # e.g., '3S.jpg'
     return os.path.join("cards", card_filename)
 
-# Initialize Streamlit Session State
+# Initialize Streamlit Session State to save cards in the streamlit session state
 if 'deck' not in st.session_state:
-    st.session_state.deck = build_deck() 
-if 'kings_drawn' not in st.session_state:
+    st.session_state.deck = build_deck()         #if "deck" is not present in the current session, run buld_deck() function
+if 'kings_drawn' not in st.session_state:        #if "kings_drawn" is not in session state, the value of kings_drawn will start from 0
     st.session_state.kings_drawn = 0
-if 'last_card' not in st.session_state:
+if 'last_card' not in st.session_state:         #if the last card is not in the session state, return none
     st.session_state.last_card = None
 
 # Actions for cards
@@ -44,12 +47,12 @@ actions = { #A dictionary that calls an action for the corresponding value of th
 }
 
 # Streamlit UI
-st.title("Card Game Web App")
-st.subheader("Draw a card and see what happens!")
-
-if st.button("Draw a Card"):
-    if st.session_state.deck:
-        card = st.session_state.deck.pop()
+st.title("Card Game Web App")                        #display title
+st.subheader("Draw a card and see what happens!")    #display subheader
+    
+if st.button("Draw a Card"):                        #visual button to trigger exection
+    if st.session_state.deck:                       #if there is a deck in the current session_state:
+        card = st.session_state.deck.pop()          #remove the last card from the card  
         st.session_state.last_card = card
         st.write(f"You drew: **{card}**")
 
