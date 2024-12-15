@@ -1,5 +1,4 @@
-#Creating a specific function for calculating the hand value of both player and dealer
-
+#Creating a specific function for calculating the hand value of both player and dealer:
 def calculate_hand_value(hand):
     value = 0 #we create a variable which contains the card's summed value
     aces = 0 #and another variable which contains the value of aces as in blackjack they can have different values.
