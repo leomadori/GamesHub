@@ -1,69 +1,80 @@
+#Creating a specific function for calculating the hand value of both player and dealer:
 def calculate_hand_value(hand):
-    value = 0
-    aces = 0
-    for card in hand:
-        rank = card.split(" ")[0]
-        if rank in ['J', 'Q', 'K']:
-            value += 10
-        elif rank == 'A':
+    value = 0 #we create a variable which contains the card's summed value
+    aces = 0 #and another variable which contains the value of aces as in blackjack they can have different values.
+    for card in hand: #creating a For loop to associate the right value to the right card:
+        rank = card.split(" ")[0] #creating a variable called rank which contains cards splitted by space
+        if rank in ['J', 'Q', 'K']: #we create if condition with a list of card name J, Q, K
+            value += 10 #iving them the value of 10
+        elif rank == 'A': #if it's an ace it cane value eiter 11 or 1
             aces += 1
             value += 11
         else:
-            value += int(rank)
+            value += int(rank)  #if the card is neither an ace or a face card, then the value will be
+                                #the exact same as the card showed. (i.e. value = 10;  rank = 3; value printed = 13)
 
-    while value > 21 and aces:
-        value -= 10
-        aces -= 1
-    return value
+    while value > 21 and aces: #If the value is over 21, determining user's loss, the aces can be decreased to the value
+        value -= 10            # of 1 (as it can be = 11 or 1). so we create a While loop that can decrease the value
+        aces -= 1              # of the aces by 10 (=1) while the variable value is greater than 21. (Aces in the deck
+    return value               # decreases by one unit)
 
-def play_blackjack(deck):
+def play_blackjack(deck):    # we create now the main function that will run the game:
     print("Welcome to Blackjack!")
 
-    while True:
-        if len(deck) < 10:
+    while True:     #starting by making a While loop, which, as long as deck's length is higher lower than 10, the
+        if len(deck) < 10:     #program will automatically reshuffle the deck with a new set of cards.
             print("Not enough cards in the deck, Resetting ... ")
-            deck.extend(build_deck())
-            random.shuffle(deck)
+            deck.extend(build_deck())  # function .extended will add into the list all the items (cards) missing.
+            random.shuffle(deck)       # then, shuffle the deck randomly.
 
-        player_hand = [draw_card(deck), draw_card(deck)]
-        dealer_hand = [draw_card(deck), draw_card(deck)]
+        player_hand = [draw_card(deck), draw_card(deck)]     #now we create 2 lists, one for player (user) and one for
+        dealer_hand = [draw_card(deck), draw_card(deck)]     # the dealer. Both players will draw 2 cards each.
 
+        #We then are going to print both hands (4 cards in total), exception: 2nd card of the dealer is hidden; and the
+        # total value of user's hand. With .joint we can show "your hand" value all together
+        # (i.e. --> "your hand: 5 spades; K harts")
         print(f"Your hand: {', '.join(player_hand)} (value: {calculate_hand_value(player_hand)})")
-        print(f"Dealer's hand: {dealer_hand[0]} and [hidden]")
-
+        print(f"Dealer's hand: {dealer_hand[0]} and [hidden]") # [0] will be the first item in the list of deal's hand,
+                                                               # the second one [1] will be hidden.
         while True:
-            action = input("Do you want to [H]it or [S]tand? ").strip().lower()
-            if action == 'h':
-                player_hand.append(draw_card(deck))
+            action = input("Do you want to [H]it or [S]tand? ").strip().lower() #afetr we showed hands, program will ask
+            if action == 'h':         #if user wants to draw another card by pressing H, or Stand (S).
+                player_hand.append(draw_card(deck)) #If user presses H, .append will add an additional card to player's
+                # hand drew it from the deck. Then program will print the update hand and value:
                 print(f"Your hand: {', '.join(player_hand)} (value: {calculate_hand_value(player_hand)})")
-                if calculate_hand_value(player_hand) > 21:
-                    print("Bust! You lose.")
-                    break  # Cambiato da return a break
-            elif action == 's':
+                if calculate_hand_value(player_hand) > 21: #implementing the condition that: if value of user's hand
+                    print("Bust! You lose.")          #greater than 21, it'll print game over and it'll break the loop.
+                    break
+            elif action == 's':   #otherwise, if user presses S, loop will break directly. no new drawn and added cards
                 break
             else:
-                print("Invalid input. Please enter 'H' or 'S'.")
+                print("Invalid input. Please enter 'H' or 'S'.") #if an invalid input is inserted, then program will ask
+                                                                 #again to insert the right one.
 
         # Dealer's turn:
-        if calculate_hand_value(player_hand) <= 21:  # Aggiunto controllo per evitare turno dealer in caso di "Bust"
+        # crating a condition that, if the updated user's hand value is less or equal to 21 (no loss up to now) after
+        # his turn, the program will print and show cards and value of dealer's hand.
+        if calculate_hand_value(player_hand) <= 21:
             print(f"Dealer's hand: {', '.join(dealer_hand)} (value: {calculate_hand_value(dealer_hand)})")
-            while calculate_hand_value(dealer_hand) < 17:
-                dealer_hand.append(draw_card(deck))
-                print(f"Dealer's hand: {', '.join(dealer_hand)} (value: {calculate_hand_value(dealer_hand)})")
+            while calculate_hand_value(dealer_hand) < 17: #creating while loop so that as long as dealer's hand value
+                dealer_hand.append(draw_card(deck)) #is less than 17, program will draw cards from the deck.
+                print(f"Dealer's hand: {', '.join(dealer_hand)} (value: {calculate_hand_value(dealer_hand)})") # once it
+                # it reaches a value which is equal or higher than 17, program will stop and print value and cards drawn
 
-            # Determine Winner:
+            # Now we'll determine the Winner:
+            # we create 2 more variables, but this time they'll contain the value of both player's and dealer's hand.
             player_value = calculate_hand_value(player_hand)
             dealer_value = calculate_hand_value(dealer_hand)
-            if dealer_value > 21 or player_value > dealer_value:
-                print("You win!")
-            elif player_value == dealer_value:
+            if dealer_value > 21 or player_value > dealer_value: #crating the condition that will assign the win to the
+                print("You win!")                                # user: if dealer busts or less value than user's one.
+            elif player_value == dealer_value:     # if both values are identical, then we have a Tie.
                 print("It's a tie!")
             else:
-                print("You lose!")
+                print("You lose!")      #otherwise, for all the remaining combinations the player will lose.
 
-        # Prompt to continue or quit:
+        # We finally add a prompt which allows the user to continue or quit:
+        # Crating a variable called continue_playing which, bsed on the user input,
         continue_playing = input("\nPress Enter to play again, or type 'quit' to exit: ").strip().lower()
         if continue_playing == "quit":
             print("Thanks for playing Blackjack!")
             break
-
