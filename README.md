@@ -59,32 +59,31 @@ To play the game, the user must first run the code in the terminal. Once done, t
    
 ## 2.2 blackjack
 
-
-Blackjack rules
+### Intro
 
 Blackjack is a popular cards game with the objective to obtain a summed card value equal or as closest as possible to 21, without exceeding it. The main rules are:
 
-1.	Cards value:
-- Number from 2 to 10: their value is equal to their nominal value (i.e. 2 = 2).
--	Figures (J,Q, K): each has a value of 10.
--	Asses (A): it can have a value of both 1 or 11 based on the player’s choice during the game.
+### Cards value:
+   - Number from 2 to 10: their value is equal to their nominal value (i.e. 2 = 2).
+   - Figures (J,Q, K): each has a value of 10.
+   - Asses (A): it can have a value of both 1 or 11 based on the player’s choice during the game.
 
-2.	Game process:
-  1.	Dealing cards: Dealer will give a pair of card to each player and to themselves, leaving one of them faced down.
-  2.	Choices of the players:
-     o The player has the target to get as closer as possible to 21 without exceeding this value, otherwise he/her will automatically lose         (known as “busting”).
-     o It’s important to make guesses of the point that the dealer could have in their hands in order to follow a good strategy.
-     o Then player can either:
-        	Hit: player is asking for an additional card.
-        	Stand: player will pass and he/she is fine with the amount of card they have.
-  3.	Dealer’s turn:
-     o They have to wait until all the players made their choices.
-     o Dealer has to draw cards until they reach at least 17. 
-     o If they exceed 21, they will lose and all the other player that are still in the game will win. 
-  4.	Win conditions:
-     o Instant Blackjack: If the player obtains an Ace and a figure or a ten with the first two cards, he/she will win automatically unless        dealer doesn’t have a blackjack too, in that case it’ll be a tie.
-     o Higher point than dealer’s: player will win.
-     o Bust: if the dealer will hit cards and overtakes 21, he will lose automatically.
+### Game process:
+1. Dealing cards: Dealer will give a pair of card to each player and to themselves, leaving one of them faced down.
+2. Choices of the players:
+   - The player has the target to get as closer as possible to 21 without exceeding this value, otherwise he/her will automatically lose         (known as “busting”).
+   - It’s important to make guesses of the point that the dealer could have in their hands in order to follow a good strategy.
+   - Then player can either:
+     - Hit: player is asking for an additional card.
+     - Stand: player will pass and he/she is fine with the amount of card they have.
+4. Dealer’s turn:
+   - They have to wait until all the players made their choices.
+   - Dealer has to draw cards until they reach at least 17.
+   - If they exceed 21, they will lose and all the other player that are still in the game will win. 
+5. Win conditions:
+   - Instant Blackjack: If the player obtains an Ace and a figure or a ten with the first two cards, he/she will win automatically unless        dealer doesn’t have a blackjack too, in that case it’ll be a tie.
+   - Higher point than dealer’s: player will win.
+   - Bust: if the dealer will hit cards and overtakes 21, he will lose automatically.
 
 
 
