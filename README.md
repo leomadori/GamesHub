@@ -144,8 +144,8 @@ This Game is an interactive general knowledge quiz where players answer ten ques
 5. **Replay or Exit:**
    - Choose whether to play again or exit the game.
 
-## 2.4 etc.
+
 # 4. outloooks 
-xd
+
 
 
