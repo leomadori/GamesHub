@@ -11,7 +11,10 @@ Leo
 ## 2.1 King's Cup
 
 ### Game Description 
-Kingscup is a card-based game where players take turns to draw cards and follow prompts. Each unique value of a card has a prompt associated to it, and the prompts remain the same regardless of the suit of the card (i.e., there are 13 different prompts * 4 different card suits). As the name suggests, the game revolves around the cards with the "King" value, with the game ending when the 4th King has been drawn.
+King' Cup is a card-based game where players take turns to draw cards and follow prompts. Each unique value of a card has a prompt associated with it, and the prompts remain the same regardless of the suit of the card (i.e., there are 13 different prompts * 4 different card suits). As the name suggests, the game revolves around the cards with the "King" value, with the game ending when the 4th King has been drawn.
+
+### Game Flow 
+Designate an empty cup as the "King's Cup". After deciding who draws the cards first (i.e. via drawing lots or whichever method the players are comfortable with), the players will take turns drawing a card every turn. After each card's prompt has been played out, the next player in order (clockwise or anti-clockwise) will draw their card. Rinse and repeat. 
 
 ### Card Values and Prompts 
 In this version of the game, the card's values have the following associated prompts.   
@@ -152,7 +155,7 @@ This Game is an interactive general knowledge quiz where players answer ten ques
 
 # 3. Outlooks 
 
-We based our project on some popular card games like Blackjack and King's cup, known also for their enterteinment value. Our focus was mainly on singl-player mode, making them accessible and enjoyable even when playing alone. Even if the project could be finished, we would like to expand our collection of game while improving the code quality at the same time.
+We based our project on some popular card games like Blackjack and King's Cup, known also for their entertainment value. Our focus was mainly on single-player mode, making them accessible and enjoyable even when playing alone. Even if the project could be finished, we would like to expand our collection of games while improving the code quality at the same time.
 
 ## Improving Our Code
 To access our code, first:
@@ -166,8 +169,8 @@ To access our code, first:
    - By adding a multiplayer mode would allow players to challenge their friends online or local network, maybe by adding more features which can make the game more competitive and entertaining. 
 
 2. **New cards game and trivia:**
-   - Poker for beginner: a very simplified version of poker could be fun to play with. Maybe also adding a simulation of bet, check and raises.
-     - Disclaimer: Do note that we do not promote irresponsible playing and that our version of “Beginner’s Poker” would not involve real money or gambling. The game is intended to be played with the sole purpose of having fun. If the player(s) chooses to gamble with real money at any point in the game, it is at their own risk and choice.
+   - Beginner's Poker: a very simplified version of poker could be fun to play with. Adding a simulated version of betting, checking and raising (like in a game of Poker) is also possible.
+     - *Disclaimer: Do note that we do not promote irresponsible playing and that our version of “Beginner’s Poker” would not involve real money or gambling. The game is intended to be played with the sole purpose of having fun. If the player(s) chooses to gamble with real money at any point in the game, it is at their own risk and choice.*
    - Memory card game: A simple game to play with friends or alone which can be both fun and skill leveraging.
    - Expanded Trivia games: add new genres to our trivia game to expand the set of playable questions.
 
