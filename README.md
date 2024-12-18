@@ -1,9 +1,7 @@
 # Xcoding
-
-possible table of content
-# 1. program description (what is it about, goals)
-# 2. features (describe how the works, don't explain the code here, do that on the actual code)
-## 2.1 kingscup
+# 1. Program Description (what is it about, goals)
+# 2. Features (describe how the works, don't explain the code here, do that on the actual code)
+## 2.1 King's Cup
 
 ### Game Description 
 Kingscup is a card-based game where players take turns to draw cards and follow prompts. Each unique value of a card has a prompt associated to it, and the prompts remain the same regardless of the suit of the card (i.e., there are 13 different prompts * 4 different card suits). As the name suggests, the game revolves around the cards with the "King" value, with the game ending when the 4th King has been drawn.
@@ -57,7 +55,7 @@ When any card with the value of A is drawn, the person who drew the card can set
 ### Operational Guide 
 To play the game, the user must first run the code in the terminal. Once done, they must select the tab that has the words "King's Cup" and click "Play" to begin the game. The game will automatically end when the tab is exited or when the 4th King has been drawn, and the user can choose to quit or play the game again.
    
-## 2.2 blackjack
+## 2.2 Blackjack
 
 ### Intro
 
@@ -145,7 +143,7 @@ This Game is an interactive general knowledge quiz where players answer ten ques
    - Choose whether to play again or exit the game.
 
 
-# 3. Outloooks 
+# 3. Outlooks 
 
 
 
