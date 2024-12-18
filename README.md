@@ -154,6 +154,8 @@ To access our code, first:
 
 ## New Games
 
+We based our project on some popular card games like Blackjack and King's cup, known also for their enterteinment value. Our focus was mainly on singl-player mode, making them accessible and enjoyable even when playing alone. Even if the project could be finished, we would like to expand our collection of game while improving the code quality at the same time.
+
 Some suggestions of games to add are:
 1.	Multiplayer Games
 2.	More Trivia-like games
