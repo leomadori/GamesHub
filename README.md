@@ -151,7 +151,8 @@ This Game is an interactive general knowledge quiz where players answer ten ques
 
 
 # 3. Outlooks 
-Our code was based on popular card games and we chose our current selection based on their entertainment value (how much we enjoyed playing them). However, if you prefer to add your own games/modify our list of games, feel free to do so!
+
+We based our project on some popular card games like Blackjack and King's cup, known also for their enterteinment value. Our focus was mainly on singl-player mode, making them accessible and enjoyable even when playing alone. Even if the project could be finished, we would like to expand our collection of game while improving the code quality at the same time.
 
 ## Improving Our Code
 To access our code, first:
@@ -161,12 +162,15 @@ To access our code, first:
 
 ## New Games
 
-We based our project on some popular card games like Blackjack and King's cup, known also for their enterteinment value. Our focus was mainly on singl-player mode, making them accessible and enjoyable even when playing alone. Even if the project could be finished, we would like to expand our collection of game while improving the code quality at the same time.
+1. **implementing Multiplayer mode:**
+   - By adding a multiplayer mode would allow players to challenge their friends online or local network, maybe by adding some more feature which can make the game more competitive and entertaining. 
 
-Some suggestions of games to add are:
-1.	Multiplayer Games
-2.	More Trivia-like games
-  
+2. New cards game and trivia
+   - Poker for beginner: a very simplified version of poker could be fun to play with. Maybe also adding a simulation of bet, check and raises.
+     - Disclaimer: Do note that we do not promote irresponsible playing and that our version of “Beginner’s poker” does not revolve around the ingestion betting. The game mainly revolves around the understanding of the basic rules of this game.
+   - Memory card game: simple game to play with friends or alone which can be both fun and skill leveraging.
+   - Expanded Trivia games: add new genres to our trivia game to expand the set of playable questions.
+
 
 ## Contribute to our page  
 Our project framework is built to allow adding any number of new games to it. If you'd like to contribute a game to our platform, simply follow these steps:
