@@ -54,7 +54,7 @@ When any card with the value of A is drawn, the person who drew the card can set
 ### Disclaimer
 *Do note that we do not promote irresponsible drinking and that our version of "King's Cup" does not revolve around the ingestion of alcoholic beverages. The game mainly revolves around the ingestion of a beverage, which can include non-alcoholic drinks, sauces/condiments (i.e. spicy Siracha sauces), and can even include non-liquids (where the person who draws the 4th King will still have to eat what is in the cup). If the player(s) chooses to consume alcohol during the game, it is at their own risk and choice.*
 
-### Operational Guide (tbc on the 17th/18th when we meet up)
+### Operational Guide 
 To play the game, the user must first run the code in the terminal. Once done, they must select the tab that has the words "King's Cup" and click "Play" to begin the game. The game will automatically end when the tab is exited or when the 4th King has been drawn, and the user can choose to quit or play the game again.
    
 ## 2.2 blackjack
@@ -145,7 +145,7 @@ This Game is an interactive general knowledge quiz where players answer ten ques
    - Choose whether to play again or exit the game.
 
 
-# 4. outloooks 
+# 3. outloooks 
 
 
 
