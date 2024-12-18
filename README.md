@@ -163,12 +163,12 @@ To access our code, first:
 ## New Games
 
 1. **implementing Multiplayer mode:**
-   - By adding a multiplayer mode would allow players to challenge their friends online or local network, maybe by adding some more feature which can make the game more competitive and entertaining. 
+   - By adding a multiplayer mode would allow players to challenge their friends online or local network, maybe by adding more features which can make the game more competitive and entertaining. 
 
 2. **New cards game and trivia:**
    - Poker for beginner: a very simplified version of poker could be fun to play with. Maybe also adding a simulation of bet, check and raises.
-     - Disclaimer: Do note that we do not promote irresponsible playing and that our version of “Beginner’s poker” does not revolve around the ingestion betting. The game mainly revolves around the understanding of the basic rules of this game.
-   - Memory card game: simple game to play with friends or alone which can be both fun and skill leveraging.
+     - Disclaimer: Do note that we do not promote irresponsible playing and that our version of “Beginner’s Poker” would not involve real money or gambling. The game is intended to be played with the sole purpose of having fun. If the player(s) chooses to gamble with real money at any point in the game, it is at their own risk and choice.
+   - Memory card game: A simple game to play with friends or alone which can be both fun and skill leveraging.
    - Expanded Trivia games: add new genres to our trivia game to expand the set of playable questions.
 
 
