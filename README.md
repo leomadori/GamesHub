@@ -70,16 +70,19 @@ Blackjack is a popular cards game with the objective to obtain a summed card val
 
 ### Game process:
 1. **Dealing cards:** Dealer will give a pair of card to each player and to themselves, leaving one of them faced down.
+   
 2. **Choices of the players:**
    - The player has the target to get as closer as possible to 21 without exceeding this value, otherwise he/her will automatically lose         (known as “busting”).
    - It’s important to make guesses of the point that the dealer could have in their hands in order to follow a good strategy.
    - Then player can either:
      - Hit: player is asking for an additional card.
      - Stand: player will pass and he/she is fine with the amount of card they have.
+
 4. **Dealer’s turn:**
    - They have to wait until all the players made their choices.
    - Dealer has to draw cards until they reach at least 17.
    - If they exceed 21, they will lose and all the other player that are still in the game will win. 
+
 5. **Win conditions:**
    - Instant Blackjack: If the player obtains an Ace and a figure or a ten with the first two cards, he/she will win automatically unless        dealer doesn’t have a blackjack too, in that case it’ll be a tie.
    - Higher point than dealer’s: player will win.
