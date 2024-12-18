@@ -145,6 +145,12 @@ This Game is an interactive general knowledge quiz where players answer ten ques
 
 # 3. Outlooks 
 
+## Suggestions
+Our code was based on popular card games and we chose our current selection based on their entertainment value (how much we enjoyed playing them). However, if you prefer to add your own games/modify our list of games, feel free to do so!
+Some suggestions of games to add are:
+1.	Multiplayer Games
+2.	More Trivia-like games
+
 
 
 
