@@ -1,6 +1,13 @@
 # Xcoding
 # 1. Program Description (what is it about, goals)
+Thanks for visiting our page!
+
+Our code offers a platform for fun and exiting games to play when you are bored. Using Streamlit, we created an easy-access interface from which to choose your games from. Enjoy your time trying our games! :)
+
 # 2. Features (describe how the works, don't explain the code here, do that on the actual code)
+
+Leo
+
 ## 2.1 King's Cup
 
 ### Game Description 
@@ -159,7 +166,15 @@ We based our project on some popular card games like Blackjack and King's cup, k
 Some suggestions of games to add are:
 1.	Multiplayer Games
 2.	More Trivia-like games
+  
 
+## Contribute to our page  
+Our project framework is built to allow adding any number of new games to it. If you'd like to contribute a game to our platform, simply follow these steps:
+1. Download our GitHub Page as a ZIP-File.
+2. Create a new Python script or module for your game.
+3. Add your game to the main menu or selection process so users can access it seamlessly.
+4. Document your game with a description, rules, and how-to-play instructions, so users can get started easily.
+5. Send us your edited GitHub Page and we will add it to our official page as soon as we can.
 
 
 
