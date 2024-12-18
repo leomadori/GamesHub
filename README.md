@@ -62,7 +62,7 @@ When any card with the value of A is drawn, the person who drew the card can set
 ### Disclaimer
 *Do note that we do not promote irresponsible drinking and that our version of "King's Cup" does not revolve around the ingestion of alcoholic beverages. The game mainly revolves around the ingestion of a beverage, which can include non-alcoholic drinks, sauces/condiments (i.e. spicy Siracha sauces), and can even include non-liquids (where the person who draws the 4th King will still have to eat what is in the cup). If the player(s) chooses to consume alcohol during the game, it is at their own risk and choice.*
 
-### Operational Guide 
+### How to Play 
 To play the game, the user must first run the code in the terminal. Once done, they must select the tab that has the words "King's Cup" and click "Play" to begin the game. The game will automatically end when the tab is exited or when the 4th King has been drawn, and the user can choose to quit or play the game again.
    
 ## 2.2 Blackjack
@@ -71,12 +71,12 @@ To play the game, the user must first run the code in the terminal. Once done, t
 
 Blackjack is a popular cards game with the objective to obtain a summed card value equal or as closest as possible to 21, without exceeding it. The main rules are:
 
-### Cards value:
+### Card Values
    - Number from 2 to 10: their value is equal to their nominal value (i.e. 2 = 2).
    - Figures (J,Q, K): each has a value of 10.
    - Asses (A): it can have a value of both 1 or 11 based on the player’s choice during the game.
 
-### Game process:
+### Game Flow
 1. **Dealing cards:** Dealer will give a pair of card to each player and to themselves, leaving one of them faced down.
    
 2. **Choices of the players:**
