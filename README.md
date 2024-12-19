@@ -29,7 +29,7 @@ After having installed all the libraries, go to the terminal and run:
 
 `streamlit run Home.py` 
 
-you will be redirected to your preferred browser to the homepage!
+You will be redirected to your preferred browser to the homepage!
 
 ## 2.1 King's Cup
 
