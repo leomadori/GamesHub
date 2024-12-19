@@ -172,10 +172,7 @@ This Game is an interactive general knowledge quiz where players answer ten ques
 
 We based our project on some popular card games like Blackjack and King's Cup, known also for their entertainment value. Our focus was mainly on single-player mode, making them accessible and enjoyable even when playing alone. Even if the project could be finished, we would like to expand our collection of games while improving the code quality at the same time.
 
-## Improving Our Code
-To access our code, first:
-1.	Download our Github Repository as a zipfile
-2.	Edit our base code in your own repository (forking it?)
+
 
 
 ## New Games
