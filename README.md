@@ -67,34 +67,34 @@ To play the game, the user must first run the code in the terminal. Once done, t
    
 ## 2.2 Blackjack
 
-### Intro
+### Game Description
 
-Blackjack is a popular cards game with the objective to obtain a summed card value equal or as closest as possible to 21, without exceeding it. The main rules are:
+Blackjack is a popular card game with the objective to obtain a summed card value equal or as close as possible to 21 without exceeding it. The main rules are:
 
 ### Card Values
-   - Number from 2 to 10: their value is equal to their nominal value (i.e. 2 = 2).
-   - Figures (J,Q, K): each has a value of 10.
-   - Asses (A): it can have a value of both 1 or 11 based on the player’s choice during the game.
+   - **Numbers from 2 to 10:** Their value is equal to their nominal value (i.e. 2 = 2).
+   - **Face cards (J, Q, K):** Each has a value of 10.
+   - **Aces (A):** Can have a value of either 1 or 11, depending on the player’s choice during the game.
 
 ### Game Flow
-1. **Dealing cards:** Dealer will give a pair of card to each player and to themselves, leaving one of them faced down.
+1. **Dealing cards:** The dealer gives two cards to each player and to themselves, with one of the dealer's cards dealt face down.
    
 2. **Choices of the players:**
-   - The player has the target to get as closer as possible to 21 without exceeding this value, otherwise he/her will automatically lose         (known as “busting”).
-   - It’s important to make guesses of the point that the dealer could have in their hands in order to follow a good strategy.
-   - Then player can either:
-     - Hit: player is asking for an additional card.
-     - Stand: player will pass and he/she is fine with the amount of card they have.
+   - The player's goal is to get as close to 21 as possible without exceeding it, as exceeding 21 (called "busting") results in an automatic loss.
+   - It’s important to make guesses on the value of the hidden card in the dealer's hand in order to follow a good strategy.
+   - Then players can choose between the following actions:
+     - **Hit:** Request an additional card.
+     - **Stand:** Decline additional cards and keep their current hand value.
 
 4. **Dealer’s turn:**
-   - They have to wait until all the players made their choices.
-   - Dealer has to draw cards until they reach at least 17.
-   - If they exceed 21, they will lose and all the other player that are still in the game will win. 
+   - The dealer waits until all the players have made their choices.
+   - The dealer must draw cards until their hand reaches at least 17.
+   - If the dealer's hand exceeds 21, they automatically lose, and all reamaining players win. 
 
 5. **Win conditions:**
-   - Instant Blackjack: If the player obtains an Ace and a figure or a ten with the first two cards, he/she will win automatically unless        dealer doesn’t have a blackjack too, in that case it’ll be a tie.
-   - Higher point than dealer’s: player will win.
-   - Bust: if the dealer will hit cards and overtakes 21, he will lose automatically.
+   - **Instant Blackjack:** If a player's initial two cards are an Ace paired with a face card or a 10 (called "Blackjack"), they win automatically, unless the dealer also has a Blackjack, in which case it is a tie.
+   - **Higher Total than the Dealer:** Players win if their hand total is higher than the dealer's without exceeding 21.
+   - **Bust:** If the dealer exceeds 21, all remaining players automatically win.
 
 
 
@@ -165,14 +165,14 @@ To access our code, first:
 
 ## New Games
 
-1. **implementing Multiplayer mode:**
-   - By adding a multiplayer mode would allow players to challenge their friends online or local network, maybe by adding more features which can make the game more competitive and entertaining. 
+1. **Implementing Multiplayer mode:**
+   - Adding a multiplayer mode would allow players to challenge their friends online or via local network. This could include additional features to make the game more competitive and entertaining. 
 
-2. **New cards game and trivia:**
-   - Beginner's Poker: a very simplified version of poker could be fun to play with. Adding a simulated version of betting, checking and raising (like in a game of Poker) is also possible.
-     - *Disclaimer: Do note that we do not promote irresponsible playing and that our version of “Beginner’s Poker” would not involve real money or gambling. The game is intended to be played with the sole purpose of having fun. If the player(s) chooses to gamble with real money at any point in the game, it is at their own risk and choice.*
-   - Memory card game: A simple game to play with friends or alone which can be both fun and skill leveraging.
-   - Expanded Trivia games: add new genres to our trivia game to expand the set of playable questions.
+2. **New Cards Games and Trivia:**
+   - **Beginner's Poker:** A simplified version of Poker could be fun and easy to learn. This version could include simulated actions such as betting, checking, and raising (similar to a real Poker game).
+     - *Disclaimer: Do note that we do not promote irresponsible playing. Our version of “Beginner’s Poker” would not involve real money or gambling. The game is intended to be played with the sole purpose of entertainment. If any player chooses to gamble with real money at any point of the game, it is at their own risk and discretion.*
+   - **Memory card game:** A simple game that can be played solo or with friends, providing both entertainment and an opportunity to enhance memory skills.
+   - **Expanded Trivia Games:** Introduce new genres to our trivia game to expand the set of playable topics and questions.
 
 
 ## Contribute to our page  
