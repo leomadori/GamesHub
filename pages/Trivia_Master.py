@@ -11,7 +11,7 @@ import streamlit as st
 # Firstly, the user can select the difficulty of the game.
 # After choosing the difficulty, the user starts with the questions.
 # All questions are multiple-choice.
-# the quiz ends after 10 questions and gives a personalized feedback based on the achieved score
+# The quiz ends after 10 questions and gives a personalized feedback based on the achieved score
 
 ###############################################################################################
 
