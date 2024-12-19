@@ -6,7 +6,8 @@ Our code offers a platform for fun and exiting games to play when you are bored.
 
 # 2. Features (describe how the works, don't explain the code here, do that on the actual code)
 
-Our application features streamlit, therefore it is imperative that Streamlit is installed on you machine:
+Our application features streamlit, therefore it is imperative that Streamlit is installed on you machine  
+
 Run `pip install streamlit` to install streamlit in you working environment
 
 ## 2.1 King's Cup
