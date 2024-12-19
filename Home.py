@@ -1,4 +1,12 @@
 import streamlit as st
+
+####################################################################################################################################
+                                                            # # # Home page # # # 
+# this very simple script is just the Homepage of our website
+# this script contains only words and a picture
+# as well as dividers to maintain a cleen look
+
+####################################################################################################################################
 st.header("Welcome to GamesHub")
 
 st.image("Images/GH_logo.webp")
