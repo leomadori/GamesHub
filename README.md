@@ -111,8 +111,7 @@ Blackjack is a popular card game with the objective to reach a summed card value
      - **Stand:** Decline additional cards and keep their current hand value.
 
 4. **Dealer’s turn:**
-   - The dealer waits until all the players have made their choices.
-   - The dealer must draw cards until their hand reaches at least 17.
+   - The dealer will draw cards until their hand reaches a minimum value of 17.
    - If the dealer's hand exceeds 21, they automatically lose, and all reamaining players win. 
 
 5. **Win conditions:**
