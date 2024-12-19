@@ -95,7 +95,7 @@ def trivia_app():
                     st.session_state["current_question"] += 1    #increment current question index to move ot the next question
                     st.session_state["shuffled_options"] = None  # Reset shuffled options for the next question
         else:
-            st.success(f"Game Over! You scored {st.session_state["score"]} out of {len(questions)}.") #if there are no more questions, display a message showing user's final score
+            st.success(f"Game Over! You scored {st.session_state['score']} out of {len(questions)}.") #if there are no more questions, display a message showing user's final score
 
             #Feedbacks based on user's score
             if st.session_state["score"] == 10: 
