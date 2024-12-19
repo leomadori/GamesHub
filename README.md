@@ -143,10 +143,7 @@ This Game is an interactive general knowledge quiz where players answer ten ques
 
 4. **Performance Feedback**
    - Players receive customized feedback based on their quiz results:
-     - 10/10: “WOW HIGHSCORE! Congratulations!”
-     - 8–9: “Great Job, you did really good!”
-     - 4–7: “You're on a good path to become a Pro!”
-     - 0–3: “Well... let's just say you might want to rethink your career as a trivia master.”
+
 
 5. **Replayability**
    - Players can replay the game endlessly, with new questions fetched each time.
