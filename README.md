@@ -1,5 +1,5 @@
 # Games Hub
-![Local Image](.Images/GH_logo.wepb)
+![Local Image](./Images/GH_logo.webp)
 
 # 1. Program Description (what is it about, goals)
 Thanks for visiting our page!
