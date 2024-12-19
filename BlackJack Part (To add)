@@ -1,86 +1,174 @@
-def draw_card(deck):
-    return deck.pop() if deck else None
+import random
+import streamlit as st
+import os
 
-def reset_deck(include_jokers=False):
-    return build_deck(include_jokers)
+##################################################################################################################################################################
+
+                                                # # # Black Jack # # #
+
+# this script runs a basic version of the game Black Jack (this means that advanced features such as "split", "doubling down", "insurance" etc. are not present)
+# the script leverages the Streamlit library to seamless integrate the game with a visual component
+# the ruls of the game can be found at (https://www.venetianlasvegas.com/resort/casino/table-games/how-to-play-blackjack.html)
+
+##################################################################################################################################################################
+
+
+
+
+######################################################################################################
+
+# # # Function Section # # #
+
+######################################################################################################
+
+#define a function to build and return a shuffled deck of cards
+def build_deck():
+    suits = {'Hearts': 'H', 'Diamonds': 'D', 'Clubs': 'C', 'Spades': 'S'}           #dictionary of suits with their abbreviations
+    values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']     #lists of card values
+    deck = [f"{value} of {suit}" for suit in suits for value in values]             #vuild a list for the full deck 
+    random.shuffle(deck)                     #shuffle deck to randomize order
+    return deck                              #returns the shuffled deck 
+
+#defined a function to get the image file path for a given card
+def get_card_image_path(card):
+    suits_abbreviation = {'Hearts': 'H', 'Diamonds': 'D', 'Clubs': 'C', 'Spades': 'S'}      #dictionary to map suit names to abbreviations
+    value, suit = card.split(" of ")            #split card string into value and suit
+    card_filename = value + suits_abbreviation[suit] + ".jpg"   #build card image filename
+    return os.path.join("cards", card_filename)                 #return the path by joning directory and filename
+
+#this function is crucial for the whole game and it returns the last card in the shuffled deck 
+def draw_card(deck):
+    return deck.pop() if deck else None 
 
 #Creating a specific function for calculating the hand value of both player and dealer:
 def calculate_hand_value(hand):
-    value = 0 #we create a variable which contains the card's summed value
-    aces = 0 #and another variable which contains the value of aces as in blackjack they can have different values.
-    for card in hand: #creating a For loop to associate the right value to the right card:
-        rank = card.split(" ")[0] #creating a variable called rank which contains cards splitted by space
-        if rank in ['J', 'Q', 'K']: #we create if condition with a list of card name J, Q, K
-            value += 10 #iving them the value of 10
-        elif rank == 'A': #if it's an ace it cane value eiter 11 or 1
+    value = 0                           #we create a variable which contains the card's summed value
+    aces = 0                            #and another variable which contains the value of aces as in blackjack they can have different values.            
+    for card in hand:                   #creating a For loop to associate the right value to the right card:
+        rank = card.split(" ")[0]       #creating a variable called rank which contains cards splitted by space
+        if rank in ['J', 'Q', 'K']:     #we create if condition with a list of card name J, Q, K
+            value += 10                 #Giving them the value of 10
+        elif rank == 'A':               #if it's an ace it can value eiter 11 or 1
             aces += 1
             value += 11
         else:
-            value += int(rank)  #if the card is neither an ace or a face card, then the value will be
-                                #the exact same as the card showed. (i.e. value = 10;  rank = 3; value printed = 13)
+            value += int(rank)          #if the card is neither an ace or a face card, then the value will be the exact same as the card showed. (i.e. value = 10;  rank = 3; value printed = 13)
 
-    while value > 21 and aces: #If the value is over 21, determining user's loss, the aces can be decreased to the value
-        value -= 10            # of 1 (as it can be = 11 or 1). so we create a While loop that can decrease the value
-        aces -= 1              # of the aces by 10 (=1) while the variable value is greater than 21. (Aces in the deck
-    return value               # decreases by one unit)
+    while value > 21 and aces:         #If the value is over 21, determining user's loss, the aces can be decreased to the value:
+        value -= 10                    # of 1 (as it can be = 11 or 1). so we create a While loop that can decrease the value
+        aces -= 1                      # of the aces by 10 (=1) while the variable value is greater than 21. (Aces in the deck
+    return value                        
 
-def play_blackjack(deck):    # we create now the main function that will run the game:
-    print("Welcome to Blackjack!")
 
-    while True:     #starting by making a While loop, which, as long as deck's length is higher lower than 10, the
-        if len(deck) < 10:     #program will automatically reshuffle the deck with a new set of cards.
-            print("Not enough cards in the deck, Resetting ... ")
-            deck.extend(build_deck())  # function .extended will add into the list all the items (cards) missing.
-            random.shuffle(deck)       # then, shuffle the deck randomly.
+#######################################################################################################
 
-        player_hand = [draw_card(deck), draw_card(deck)]     #now we create 2 lists, one for player (user) and one for
-        dealer_hand = [draw_card(deck), draw_card(deck)]     # the dealer. Both players will draw 2 cards each.
+# # # Streamlit Section # # # 
 
-        #We then are going to print both hands (4 cards in total), exception: 2nd card of the dealer is hidden; and the
-        # total value of user's hand. With .joint we can show "your hand" value all together
-        # (i.e. --> "your hand: 5 spades; K harts")
-        print(f"Your hand: {', '.join(player_hand)} (value: {calculate_hand_value(player_hand)})")
-        print(f"Dealer's hand: {dealer_hand[0]} and [hidden]") # [0] will be the first item in the list of deal's hand,
-                                                               # the second one [1] will be hidden.
-        while True:
-            action = input("Do you want to [H]it or [S]tand? ").strip().lower() #afetr we showed hands, program will ask
-            if action == 'h':         #if user wants to draw another card by pressing H, or Stand (S).
-                player_hand.append(draw_card(deck)) #If user presses H, .append will add an additional card to player's
-                # hand drew it from the deck. Then program will print the update hand and value:
-                print(f"Your hand: {', '.join(player_hand)} (value: {calculate_hand_value(player_hand)})")
-                if calculate_hand_value(player_hand) > 21: #implementing the condition that: if value of user's hand
-                    print("Bust! You lose.")          #greater than 21, it'll print game over and it'll break the loop.
-                    break
-            elif action == 's':   #otherwise, if user presses S, loop will break directly. no new drawn and added cards
-                break
-            else:
-                print("Invalid input. Please enter 'H' or 'S'.") #if an invalid input is inserted, then program will ask
-                                                                 #again to insert the right one.
+#######################################################################################################
 
-        # Dealer's turn:
-        # crating a condition that, if the updated user's hand value is less or equal to 21 (no loss up to now) after
-        # his turn, the program will print and show cards and value of dealer's hand.
-        if calculate_hand_value(player_hand) <= 21:
-            print(f"Dealer's hand: {', '.join(dealer_hand)} (value: {calculate_hand_value(dealer_hand)})")
-            while calculate_hand_value(dealer_hand) < 17: #creating while loop so that as long as dealer's hand value
-                dealer_hand.append(draw_card(deck)) #is less than 17, program will draw cards from the deck.
-                print(f"Dealer's hand: {', '.join(dealer_hand)} (value: {calculate_hand_value(dealer_hand)})") # once it
-                # it reaches a value which is equal or higher than 17, program will stop and print value and cards drawn
+# Streamlit UI
+st.title("Blackjack Game")                      #title
 
-            # Now we'll determine the Winner:
-            # we create 2 more variables, but this time they'll contain the value of both player's and dealer's hand.
-            player_value = calculate_hand_value(player_hand)
-            dealer_value = calculate_hand_value(dealer_hand)
-            if dealer_value > 21 or player_value > dealer_value: #crating the condition that will assign the win to the
-                print("You win!")                                # user: if dealer busts or less value than user's one.
-            elif player_value == dealer_value:     # if both values are identical, then we have a Tie.
-                print("It's a tie!")
-            else:
-                print("You lose!")      #otherwise, for all the remaining combinations the player will lose.
+st.image("Images/Blackjack_img.webp")         #image
+st.divider() 
 
-        # We finally add a prompt which allows the user to continue or quit:
-        # Crating a variable called continue_playing which, bsed on the user input,
-        continue_playing = input("\nPress Enter to play again, or type 'quit' to exit: ").strip().lower()
-        if continue_playing == "quit":
-            print("Thanks for playing Blackjack!")
-            break
+st.subheader("Click here to start the game")
+
+# Session State
+if 'deck' not in st.session_state:              #check if deck is not in sessionstate
+    st.session_state.deck = build_deck()        #if not, initialize the deck by calling function "build_deck"
+if 'player_hand' not in st.session_state:       #check if "player_hand" is not in session state
+    st.session_state.player_hand = []           #if not, initialize "player_hand" as empty list
+if 'dealer_hand' not in st.session_state:       #check if "dealer_hand" is not in session state
+    st.session_state.dealer_hand = []           #if not, initialize dealer's hand as empty list
+if 'game_over' not in st.session_state:         #check if "game_over" is not in session state
+    st.session_state.game_over = False          #if not, set "game over" to FALSE
+if 'player_value' not in st.session_state:      #check if "player_value" is not in session state
+    st.session_state.player_value = 0           #if not, initialize "player_value" as 0
+if 'dealer_value' not in st.session_state:      #check if "dealer_value" is not in session state
+    st.session_state.dealer_value = 0           #if not, initialize dealer_value as 0
+if 'game_started' not in st.session_state:      #check if "game_started" is not in session state
+    st.session_state.game_started = False       #if not, set game_started to FALSE
+if 'drawn_card' not in st.session_state:        #check if "drawn_card" is not in session state
+    st.session_state.drawn_card = None          #if not, initialize "drawn_card" as None
+
+
+# Start game
+if not st.session_state.game_started:           #checks if the game has not started yet
+    if st.button("Start Game"):                 #display a button, and if clicked: 
+        st.session_state.game_started = True    #set "game_started" to TRUE
+        st.session_state.player_hand = [draw_card(st.session_state.deck), draw_card(st.session_state.deck)]     #deal two cards to player
+        st.session_state.dealer_hand = [draw_card(st.session_state.deck), draw_card(st.session_state.deck)]     #deal two cards to dealer
+        st.session_state.player_value = calculate_hand_value(st.session_state.player_hand)                      #calculate player's initial hand value
+        st.session_state.dealer_value = calculate_hand_value(st.session_state.dealer_hand)                      #caluclated dealer's initial hand value
+
+
+
+# Display player and dealer hands
+if st.session_state.game_started:       #if the game ahs started
+    st.subheader("Your Hand")           #display player's hand section
+    st.write(f"Value: {st.session_state.player_value}")                 # Display player's current hand value
+    player_card_cols = st.columns(len(st.session_state.player_hand))    #create columns for each player's card for better visualization
+    for idx, card in enumerate(st.session_state.player_hand):           #iterate over palyer's cards
+        with player_card_cols[idx]:                                     #place each card image in its own col
+            st.image(get_card_image_path(card), width=100)              #display card image for the player's card
+
+    if st.session_state.drawn_card:                                     #if a card was recently drawn: 
+        st.write(f"You drew: {st.session_state.drawn_card}")            #display the drawn card
+
+    st.subheader("Dealer's Hand")                                       #display the dealer's hand section   
+    dealer_card_cols = st.columns(len(st.session_state.dealer_hand))    #create cols for each dealer's card
+    for idx, card in enumerate(st.session_state.dealer_hand):           #iterate over dealer's cards
+        with dealer_card_cols[idx]:                                     #place each card image in its own col
+            st.image(get_card_image_path(card), width=100)              #display card image for the dealer's card
+    st.write(f"Value: {st.session_state.dealer_value}")                 #display the dealer's current hand value
+
+
+
+# Player actions
+if st.session_state.game_started and not st.session_state.game_over:   #if the game is started and not over yet:
+    col1, col2 = st.columns(2)                                         #create two cols for "Hit" and "Stand" buttons
+    with col1:                      #in the first column
+        if st.button("Hit"):        #if player clicks "Hit":
+            new_card = draw_card(st.session_state.deck)                #draw new card for the player
+            st.session_state.player_hand.append(new_card)              #append new card to player's hand
+            st.session_state.player_value = calculate_hand_value(st.session_state.player_hand)      #recalculate new player's hand value
+            st.session_state.drawn_card = new_card  #store the drawn card for display
+
+            if st.session_state.player_value > 21:  #check if palyer value exceed 21 (burst)
+                st.session_state.game_over = True   #if so, game is over because player burst
+
+            st.experimental_rerun()  #force rerun to immediately update UI
+
+    with col2:
+        if st.button("Stand"):                  #in the second column, if player click "stand":
+            while st.session_state.dealer_value < 17:    #dealer must draw until hand value is at least 17 (game rules)
+                st.session_state.dealer_hand.append(draw_card(st.session_state.deck))   #dealer draws a card
+                st.session_state.dealer_value = calculate_hand_value(st.session_state.dealer_hand)    #recalculate dealer's value
+            st.session_state.game_over = True           #after the dealer finishes, the game is over   
+            st.experimental_rerun()                     #return to update UI
+
+
+
+# Determine winner
+if st.session_state.game_over:                          #if the game is over
+    if st.session_state.player_value == 21:
+        st.success("BLACK JACK")
+    if st.session_state.player_value > 21:              #if player "busted"
+        st.error("Bust! You lose.")                     #inform player that he has lost
+    elif st.session_state.dealer_value > 21 or st.session_state.player_value > st.session_state.dealer_value:   #if dealer bust or player value is closer to 21
+        st.success("You win!")                          #player wins
+    elif st.session_state.player_value == st.session_state.dealer_value:    #if tie
+        st.warning("It's a tie!")                       #announce tie         
+    else:
+        st.error("You lose!")                           #otherwise, dealer wins
+
+    if st.button("Restart Game"):                       #if player wants to restart.
+        st.session_state.deck = build_deck()            #rebuild the deck
+        st.session_state.player_hand = []               #reset player's hand
+        st.session_state.dealer_hand = []               #reset dealer's hand
+        st.session_state.game_over = False              #set game over to FALSE
+        st.session_state.player_value = 0               #reset player value
+        st.session_state.dealer_value = 0               #reset dealer value
+        st.session_state.game_started = False           #set game started to FALSE
+        st.session_state.drawn_card = None              #clear the drawn cards
