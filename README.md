@@ -8,11 +8,11 @@ Our code offers a platform for fun and exiting games to play when you are bored.
 
 # 2. Features
 
-Our application features streamlit, therefore it is imperative that Streamlit is installed on you machine  
+Our application features streamlit, therefore it is imperative that Streamlit is installed on your machine.  
 
-Run `pip install streamlit` to install streamlit in you working environment
+Run `pip install streamlit` to install streamlit in your working environment
 
-In our script we also used other libraries, in order to run the application, please run the following commands:  
+In our script we also used other libraries. In order to run the application, please run the following commands:  
 `pip install random`  
 
 `pip install os` 
