@@ -101,11 +101,11 @@ Blackjack is a popular card game with the objective to reach a summed card value
    - **Aces (A):** Can have a value of either 1 or 11, depending on the player’s choice during the game.
 
 ### Game Flow
-1. **Dealing cards:** The dealer gives two cards to each player and to themselves, with one of the dealer's cards dealt face down.
+1. **Dealing cards:** The dealer gives two cards to each player and to themselves. Both of the dealer's cards will be visible.
    
 2. **Choices of the players:**
    - The player's goal is to get as close to 21 as possible without exceeding it, as exceeding 21 (called "busting") results in an automatic loss.
-   - It’s important to make guesses on the value of the hidden card in the dealer's hand in order to follow a good strategy.
+   - It’s important to play around the dealer's hand and come up with a good strategy in order to win.
    - Then players can choose between the following actions:
      - **Hit:** Request an additional card.
      - **Stand:** Decline additional cards and keep their current hand value.
