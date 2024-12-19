@@ -6,10 +6,13 @@ import streamlit as st
 
 ###############################################################################################
                             # # # Quiz Game # # #
-# The following is a script for a Trivia Game that uses the Open Database Trivia API to fetch questions.
+# The following is a script for a Trivia Game that uses the Open Database Trivia API to fetch questions. 
+# Open Trivia Database (https://opentdb.com/)
 # Firstly, the user can select the difficulty of the game.
 # After choosing the difficulty, the user starts with the questions.
 # All questions are single-choice.
+# the quiz ends after 10 questions and gives a personalized feeback on the achieved score
+
 ###############################################################################################
 
 # Base API URL: database for trivia questions
