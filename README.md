@@ -23,6 +23,14 @@ In our script we also used other libraries, in order to run the application, ple
 
 `pip install html`  
 
+### Running the code
+
+After having installed all the libraries, run:  
+
+`streamlit run Home.py` 
+
+you will be redirected to your preferred browser to the homepage!
+
 ## 2.1 King's Cup
 
 ### Game Description 
