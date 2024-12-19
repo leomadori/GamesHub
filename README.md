@@ -69,7 +69,7 @@ To play the game, the user must first run the code in the terminal. Once done, t
 
 ### Game Description
 
-Blackjack is a popular card game with the objective to obtain a summed card value equal or as close as possible to 21 without exceeding it. The main rules are:
+Blackjack is a popular card game with the objective to reach a summed card value equal or as close as possible to 21 without exceeding it. The main rules are:
 
 ### Card Values
    - **Numbers from 2 to 10:** Their value is equal to their nominal value (i.e. 2 = 2).
