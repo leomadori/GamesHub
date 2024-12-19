@@ -192,11 +192,12 @@ To access our code, first:
 
 ## Contribute to our page  
 Our project framework is built to allow adding any number of new games to it. If you'd like to contribute a game to our platform, simply follow these steps:
-1. Download our GitHub Page as a ZIP-File.
-2. Create a new Python script or module for your game.
-3. Add your game to the main menu or selection process so users can access it seamlessly.
-4. Document your game with a description, rules, and how-to-play instructions, so users can get started easily.
-5. Send us your edited GitHub Page and we will add it to our official page as soon as we can.
+1. Fork this repository
+2. Clone the repository
+   `git clone https://github.com/leomadori/GamesHub` 
+4. Add your game to the main menu or selection process so users can access it seamlessly.
+5. Document your game with a description, rules, and how-to-play instructions, so users can get started easily.
+6. Send us your edited GitHub Page and we will add it to our official page as soon as we can.
 
 
 
