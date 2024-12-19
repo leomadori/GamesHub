@@ -10,6 +10,13 @@ Our application features streamlit, therefore it is imperative that Streamlit is
 
 Run `pip install streamlit` to install streamlit in you working environment
 
+In our script we also used other libraries, in order to run the application, please run the following commands:  
+`pip install random`  
+`pip install os`
+`pip install json`
+`pip install requests`
+`pip install html`
+
 ## 2.1 King's Cup
 
 ### Game Description 
