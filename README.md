@@ -25,7 +25,7 @@ In our script we also used other libraries, in order to run the application, ple
 
 ### Running the code
 
-After having installed all the libraries, run:  
+After having installed all the libraries, go to the terminal and run:  
 
 `streamlit run Home.py` 
 
