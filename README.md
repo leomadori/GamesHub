@@ -1,12 +1,12 @@
 # Games Hub
 ![Local Image](./Images/GH_logo.webp)
 
-# 1. Program Description (what is it about, goals)
+# 1. Program Description
 Thanks for visiting our page!
 
 Our code offers a platform for fun and exiting games to play when you are bored. Using Streamlit, we created an easy-access interface from which to choose your games from. Enjoy your time trying our games! :)
 
-# 2. Features (describe how the works, don't explain the code here, do that on the actual code)
+# 2. Features
 
 Our application features streamlit, therefore it is imperative that Streamlit is installed on you machine  
 
