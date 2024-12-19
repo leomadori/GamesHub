@@ -1,4 +1,6 @@
-# Xcoding
+# Games Hub
+![Local Image](.Images/GH_logo.wepb)
+
 # 1. Program Description (what is it about, goals)
 Thanks for visiting our page!
 
