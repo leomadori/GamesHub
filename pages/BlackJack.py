@@ -172,3 +172,10 @@ if st.session_state.game_over:                          # If the game is over
         st.session_state.dealer_value = 0               # Reset dealer value
         st.session_state.game_started = False           # Set game started to FALSE
         st.session_state.drawn_card = None              # Clear the drawn cards
+
+
+################################################################################################################################################
+#Chatgpt declaration:
+#Chatgpt was used for debugging and error handling trhoughout the whole code
+
+################################################################################################################################################
