@@ -119,4 +119,9 @@ if st.button("Reset Deck"):                             # Visual button to reset
 # Display remaining cards
 st.write(f"Cards remaining: {len(st.session_state.deck)}")  # Display the number of cards left
 
-#####################################################################################################################
+################################################################################################################################################
+#Chatgpt declaration:
+#Chatgpt was used for debugging and error handling trhoughout the whole code
+
+################################################################################################################################################
+
